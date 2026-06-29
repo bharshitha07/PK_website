@@ -1,0 +1,658 @@
+
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#050b17;
+color:#ffffff;
+overflow-x:hidden;
+line-height:1.6;
+}
+
+/* ===========================
+   CUSTOM SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#050b17;
+}
+
+::-webkit-scrollbar-thumb{
+background:#d4af37;
+border-radius:10px;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(5,11,23,0.95);
+backdrop-filter:blur(10px);
+z-index:1000;
+border-bottom:1px solid rgba(212,175,55,0.15);
+}
+
+.logo-section{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo{
+width:200px;
+}
+
+.brand-text h2{
+font-size:22px;
+font-weight:700;
+color:#fff;
+}
+
+.brand-text p{
+font-size:12px;
+color:#d4af37;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#fff;
+font-weight:500;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#d4af37;
+}
+
+.menu-btn{
+display:none;
+font-size:24px;
+cursor:pointer;
+color:#d4af37;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero{
+height:100vh;
+background:url("images/hero.jpg") center center/cover no-repeat;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+padding:20px;
+}
+
+.hero-content h1{
+font-size:5rem;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.hero-content h1 span{
+color:#d4af37;
+}
+
+.hero-content p{
+font-size:1.3rem;
+color:#dddddd;
+margin-bottom:35px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn-primary{
+padding:15px 35px;
+background:#d4af37;
+color:#000;
+text-decoration:none;
+font-weight:600;
+border-radius:50px;
+transition:.3s;
+}
+
+.btn-primary:hover{
+transform:translateY(-5px);
+}
+
+.btn-secondary{
+padding:15px 35px;
+border:2px solid #d4af37;
+color:#d4af37;
+text-decoration:none;
+font-weight:600;
+border-radius:50px;
+transition:.3s;
+}
+
+.btn-secondary:hover{
+background:#d4af37;
+color:#000;
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:42px;
+color:#d4af37;
+position:relative;
+display:inline-block;
+}
+
+.section-title h2::after{
+content:'';
+position:absolute;
+left:50%;
+bottom:-10px;
+transform:translateX(-50%);
+width:80px;
+height:3px;
+background:#d4af37;
+}
+
+/* ===========================
+   ABOUT
+=========================== */
+
+.about-content{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about-text h3{
+font-size:32px;
+margin-bottom:20px;
+color:#d4af37;
+}
+
+.about-text p{
+margin-bottom:20px;
+color:#cfcfcf;
+}
+
+.about-image img{
+width:100%;
+border-radius:20px;
+box-shadow:0 0 40px rgba(212,175,55,.15);
+}
+
+/* ===========================
+   SERVICES
+=========================== */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.service-card{
+background:#0e1627;
+padding:35px;
+border-radius:20px;
+text-align:center;
+transition:.4s;
+border:1px solid rgba(212,175,55,.08);
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(212,175,55,.25);
+}
+
+.service-card i{
+font-size:45px;
+color:#d4af37;
+margin-bottom:20px;
+}
+
+.service-card h3{
+margin-bottom:15px;
+}
+
+/* ===========================
+   THEATRES
+=========================== */
+
+.theatre-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.theatre-card{
+overflow:hidden;
+border-radius:20px;
+position:relative;
+cursor:pointer;
+}
+
+.theatre-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+transition:.5s;
+}
+
+.theatre-card:hover img{
+transform:scale(1.1);
+}
+
+.theatre-info{
+position:absolute;
+bottom:0;
+width:100%;
+padding:20px;
+background:linear-gradient(
+transparent,
+rgba(0,0,0,0.9)
+);
+}
+
+.theatre-info h3{
+color:#fff;
+}
+
+/* ===========================
+   PARTNERS
+=========================== */
+
+.partners-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.partner-box{
+padding:30px;
+background:#0e1627;
+border-radius:15px;
+text-align:center;
+font-size:20px;
+font-weight:600;
+border:1px solid rgba(212,175,55,.1);
+transition:.3s;
+}
+
+.partner-box:hover{
+background:#d4af37;
+color:#000;
+}
+
+/* ===========================
+   WHY CHOOSE US
+=========================== */
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.why-card{
+background:#0e1627;
+padding:35px;
+text-align:center;
+border-radius:15px;
+font-weight:600;
+border-left:4px solid #d4af37;
+}
+
+/* ===========================
+   CONTACT
+=========================== */
+
+.contact-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+}
+
+.contact-info{
+background:#0e1627;
+padding:35px;
+border-radius:20px;
+}
+
+.contact-info h3{
+margin-bottom:20px;
+color:#d4af37;
+}
+
+.contact-info p{
+margin-bottom:20px;
+}
+
+.contact-form form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:15px;
+border:none;
+outline:none;
+background:#0e1627;
+color:#fff;
+border-radius:10px;
+}
+
+.contact-form button{
+padding:15px;
+background:#d4af37;
+color:#000;
+border:none;
+font-weight:600;
+cursor:pointer;
+border-radius:10px;
+transition:.3s;
+}
+
+.contact-form button:hover{
+transform:translateY(-3px);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+background:#02060f;
+padding:50px 20px;
+text-align:center;
+}
+
+.footer-logo img{
+width:150px;
+margin-bottom:10px;
+}
+
+.footer-logo h3{
+color:#d4af37;
+margin-bottom:5px;
+}
+
+.footer-social{
+margin:25px 0;
+}
+
+.footer-social a{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:45px;
+height:45px;
+border-radius:50%;
+background:#d4af37;
+color:#000;
+margin:0 8px;
+text-decoration:none;
+font-size:18px;
+transition:.3s;
+}
+
+.footer-social a:hover{
+transform:translateY(-5px);
+}
+
+.copyright{
+color:#999;
+}
+
+/* ===========================
+   WHATSAPP BUTTON
+=========================== */
+
+.whatsapp-btn{
+position:fixed;
+right:25px;
+bottom:25px;
+width:60px;
+height:60px;
+background:#25d366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+color:#fff;
+text-decoration:none;
+z-index:999;
+box-shadow:0 0 20px rgba(37,211,102,.5);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:991px){
+
+.about-content,
+.contact-container{
+grid-template-columns:1fr;
+}
+
+.hero-content h1{
+font-size:3.5rem;
+}
+
+.nav-links{
+display:none;
+}
+
+.menu-btn{
+display:block;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:2.8rem;
+}
+
+.hero-content p{
+font-size:1rem;
+}
+
+.section-title h2{
+font-size:32px;
+}
+
+.logo{
+width:55px;
+}
+
+.brand-text h2{
+font-size:18px;
+}
+
+}
+/* Existing CSS */
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:2.8rem;
+}
+
+.hero-content p{
+font-size:1rem;
+}
+
+.section-title h2{
+font-size:32px;
+}
+
+.logo{
+width:55px;
+}
+
+.brand-text h2{
+font-size:18px;
+}
+
+}
+
+/* ===========================
+   ADD THIS BELOW
+=========================== */
+
+/* ACTIVE NAV LINK */
+
+.active-link{
+color:#d4af37 !important;
+}
+
+/* MOBILE MENU */
+
+@media(max-width:991px){
+
+.nav-links.active{
+display:flex;
+flex-direction:column;
+position:absolute;
+top:90px;
+left:0;
+width:100%;
+background:#050b17;
+padding:25px;
+text-align:center;
+gap:20px;
+}
+
+}
+
+/* SCROLL REVEAL */
+
+.service-card,
+.theatre-card,
+.partner-box,
+.why-card,
+.about-text,
+.about-image,
+.contact-info,
+.contact-form{
+
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+
+}
+
+.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+/* BACK TO TOP */
+
+.back-to-top{
+
+position:fixed;
+bottom:100px;
+right:25px;
+
+width:50px;
+height:50px;
+
+background:#d4af37;
+color:#000;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+cursor:pointer;
+
+font-size:18px;
+
+opacity:0;
+visibility:hidden;
+
+transition:.3s;
+
+z-index:999;
+
+}
+
+.show-top{
+
+opacity:1;
+visibility:visible;
+
+}
